@@ -19,7 +19,9 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
     "License :: OSI Approved :: MIT License",
 ]
-dependencies = []
+dependencies = [
+    "oro-confidence>=0.1.0",
+]
 
 [project.optional-dependencies]
 dev = [
@@ -52,6 +54,11 @@ disallow_untyped_defs = true
 strict_optional = true
 warn_redundant_casts = true
 warn_unused_ignores = true
+
+[[tool.mypy.overrides]]
+module = ["oro_confidence", "oro_confidence.*"]
+ignore_missing_imports = true
+follow_untyped_imports = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
