@@ -1,6 +1,6 @@
 """Smoke test — verify the package imports correctly."""
 
-from oro_models import __version__
+from our_models import __version__
 
 
 def test_version_is_set() -> None:

@@ -1,4 +1,4 @@
-"""Shared test fixtures for oro-models."""
+"""Shared test fixtures for our-models."""
 
 from __future__ import annotations
 

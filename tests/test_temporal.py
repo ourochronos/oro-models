@@ -1,4 +1,4 @@
-"""Tests for oro_models.temporal module."""
+"""Tests for our_models.temporal module."""
 
 from __future__ import annotations
 
@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 
 import pytest
 
-from oro_models.temporal import (
+from our_models.temporal import (
     SupersessionChain,
     TemporalValidity,
     calculate_freshness,

@@ -1,4 +1,4 @@
-"""Tests for oro_models.models module."""
+"""Tests for our_models.models module."""
 
 from __future__ import annotations
 
@@ -6,9 +6,9 @@ import json
 from datetime import datetime
 from uuid import uuid4
 
-from oro_confidence import DimensionalConfidence
+from our_confidence import DimensionalConfidence
 
-from oro_models.models import (
+from our_models.models import (
     Belief,
     BeliefEntity,
     BeliefStatus,

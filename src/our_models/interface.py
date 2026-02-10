@@ -1,4 +1,4 @@
-"""Public interface for oro-models.
+"""Public interface for our-models.
 
 This brick provides data models (dataclasses) and enums rather than
 abstract interfaces. The models themselves ARE the public contract.
@@ -11,5 +11,5 @@ Core types:
 
 All types are re-exported from the package root:
 
-    from oro_models import Belief, TemporalValidity
+    from our_models import Belief, TemporalValidity
 """

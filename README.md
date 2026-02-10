@@ -1,4 +1,4 @@
-# oro-models
+# our-models
 
 Data models with temporal validity and dimensional confidence for the ourochronos ecosystem
 
@@ -9,13 +9,13 @@ _Brief description of what this brick does and why it exists._
 ## Install
 
 ```bash
-pip install oro-models
+pip install our-models
 ```
 
 ## Usage
 
 ```python
-from oro_models import ...
+from our_models import ...
 ```
 
 ## API

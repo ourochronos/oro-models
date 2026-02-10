@@ -1,4 +1,4 @@
-"""oro-models -- Data models with temporal validity and dimensional confidence for the ourochronos ecosystem."""
+"""our-models -- Data models with temporal validity and dimensional confidence for the ourochronos ecosystem."""
 
 __version__ = "0.1.0"
 
