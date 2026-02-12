@@ -729,6 +729,21 @@ class TestPattern:
         pattern = Pattern.from_row(row)
         assert pattern.evidence == session_ids
 
+    def test_from_row_with_psycopg2_empty_array_string(self, pattern_row_factory) -> None:  # type: ignore[no-untyped-def]
+        """from_row should handle psycopg2 returning UUID[] as string '{}'."""
+        row = pattern_row_factory(evidence="{}")
+        pattern = Pattern.from_row(row)
+        assert pattern.evidence == []
+
+    def test_from_row_with_psycopg2_populated_array_string(self, pattern_row_factory) -> None:  # type: ignore[no-untyped-def]
+        """from_row should handle psycopg2 returning UUID[] as string '{uuid1,uuid2}'."""
+        id1, id2 = uuid4(), uuid4()
+        row = pattern_row_factory(evidence=f"{{{id1},{id2}}}")
+        pattern = Pattern.from_row(row)
+        assert len(pattern.evidence) == 2
+        assert pattern.evidence[0] == id1
+        assert pattern.evidence[1] == id2
+
 
 # ============================================================================
 # SessionInsight Model Tests

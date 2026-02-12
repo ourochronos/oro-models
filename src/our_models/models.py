@@ -458,9 +458,17 @@ class Pattern:
     @classmethod
     def from_row(cls, row: dict[str, Any]) -> Pattern:
         """Create from database row."""
-        evidence = row.get("evidence", [])
-        if evidence and isinstance(evidence[0], str):
-            evidence = [UUID(e) for e in evidence]
+        raw_evidence = row.get("evidence", [])
+
+        # psycopg2 returns UUID[] columns as raw PostgreSQL array strings
+        # e.g. '{}' for empty, '{uuid1,uuid2}' for populated
+        if isinstance(raw_evidence, str):
+            inner = raw_evidence.strip("{}")
+            evidence = [UUID(e) for e in inner.split(",") if e] if inner else []
+        elif isinstance(raw_evidence, list) and raw_evidence and isinstance(raw_evidence[0], str):
+            evidence = [UUID(e) for e in raw_evidence]
+        else:
+            evidence = list(raw_evidence) if raw_evidence else []
 
         return cls(
             id=row["id"] if isinstance(row["id"], UUID) else UUID(row["id"]),
