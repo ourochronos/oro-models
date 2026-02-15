@@ -60,6 +60,10 @@ class Platform(StrEnum):
     MATRIX = "matrix"
     API = "api"
     SLACK = "slack"
+    CLAUDE_WEB = "claude-web"
+    CLAUDE_DESKTOP = "claude-desktop"
+    CLAUDE_MOBILE = "claude-mobile"
+    OPENCLAW = "openclaw"
 
 
 class ExchangeRole(StrEnum):
