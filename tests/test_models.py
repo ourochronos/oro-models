@@ -99,8 +99,14 @@ class TestPlatform:
     def test_all_values_exist(self) -> None:
         """All expected platform values should exist."""
         expected = {
-            "CLAUDE_CODE", "CLAUDE_WEB", "CLAUDE_DESKTOP", "CLAUDE_MOBILE",
-            "MATRIX", "API", "SLACK", "OPENCLAW",
+            "CLAUDE_CODE",
+            "CLAUDE_WEB",
+            "CLAUDE_DESKTOP",
+            "CLAUDE_MOBILE",
+            "MATRIX",
+            "API",
+            "SLACK",
+            "OPENCLAW",
         }
         actual = {p.name for p in Platform}
         assert actual == expected
